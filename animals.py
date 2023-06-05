@@ -1,9 +1,10 @@
 """Animals"""
 
-from slithering import Arachnid, Lizard, Monitor, Scorpion, Snake
-from swimming import Duck, Fish, Frog, Gecko, Turtle
-from walking import Donkey, Goat, Llama, Pony, Rabbit
-from areas import PettingZoo, Wetlands, SnakePit
+from animals import Arachnid, Lizard, Monitor, Scorpion, Snake
+from animals import Duck, Fish, Frog, Gecko, Turtle
+from animals import Donkey, Goat, Llama, Pony, Rabbit
+from animals import Goose
+from attractions import PettingZoo, Wetlands, SnakePit
 
 charlotte = Arachnid("Charlotte", "Venezuelan Suntiger Tarantula", "bugs", 2001)
 sparks = Lizard("Sparks", "Fire Skink", "bugs", 2002)
@@ -28,30 +29,34 @@ slither_inn = SnakePit("Slither Inn", "creepy crawlies run this scareBNB")
 critter_cove = Wetlands("Critter Cove", "creatures galore - floating, swimming, and more")
 
 varmint_village = PettingZoo("Varmint Village", "cute and fuzzy critters to cuddle")
-varmint_village.add_animal(lefty)
-varmint_village.add_animal(lebron)
-varmint_village.add_animal(miss_fuzz)
-varmint_village.add_animal(peter)
-varmint_village.add_animal(lil)
+varmint_village.add_animal_pythonic(lefty)
+varmint_village.add_animal_pythonic(lebron)
+varmint_village.add_animal_pythonic(miss_fuzz)
+varmint_village.add_animal_pythonic(peter)
+varmint_village.add_animal_pythonic(lil)
+varmint_village.add_animal_pythonic(spike)
+varmint_village.add_animal_pythonic(quackers)
 last_animal = varmint_village.last_critter_added
-# print(varmint_village)
+print(varmint_village)
 print(last_animal)
+print (miss_fuzz.feed_llama())
+print (miss_fuzz.feed())
 
 slither_inn = SnakePit("Slither Inn", "creepy crawlies run this scareBNB")
-slither_inn.add_animal(charlotte)
-slither_inn.add_animal(sparks)
-slither_inn.add_animal(mortimor)
-slither_inn.add_animal(spike)
-slither_inn.add_animal(sir_hugs_a_lot)
+slither_inn.add_animal_pythonic(charlotte)
+slither_inn.add_animal_pythonic(sparks)
+slither_inn.add_animal_pythonic(mortimor)
+slither_inn.add_animal_pythonic(spike)
+slither_inn.add_animal_pythonic(sir_hugs_a_lot)
 print(slither_inn)
 
 critter_cove = Wetlands("Critter Cove", "creatures galore - floating, swimming, and more")
-critter_cove.add_animal(quackers)
-critter_cove.add_animal(bubbles)
-critter_cove.add_animal(tinkerbell)
-critter_cove.add_animal(gordon)
-critter_cove.add_animal(donatello)
-# print(critter_cove)
+critter_cove.add_animal_pythonic(quackers)
+critter_cove.add_animal_pythonic(bubbles)
+critter_cove.add_animal_pythonic(tinkerbell)
+critter_cove.add_animal_pythonic(gordon)
+critter_cove.add_animal_pythonic(donatello)
+print(critter_cove)
 
 # for animal in varmint_village.animals:
 #     print(f"{varmint_village.attraction_name} is where you'll find {varmint_village.description}, like {animal.name} the {animal.species}")
@@ -62,3 +67,20 @@ critter_cove.add_animal(donatello)
 # print(f'{lebron.name} the {lebron.species} is available to pet during the {lebron.shift} shift.')
 # print(miss_fuzz.feed())
 # print(lil)
+
+bob = Goose("Bob", "Canada goose", "watercress sandwiches", 3006)
+# bob.run()
+# bob.swim()
+
+# Create an attraction
+varmint_village = PettingZoo("Varmint Village", "critters that like to dig and scurry")
+varmint_village.add_animal(bob)
+
+for animal in varmint_village.animals:
+    print(animal)
+
+for animal in slither_inn.animals:
+    print(animal)
+
+for animal in critter_cove.animals:
+    print(animal)
